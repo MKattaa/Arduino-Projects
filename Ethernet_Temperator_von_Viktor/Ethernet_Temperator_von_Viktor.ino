@@ -10,7 +10,7 @@ DallasTemperature sensors(&oneWire);
 // **** ETHERNET SETTING ****
 byte mac[] = { 0x54, 0x34, 0x41, 0x30, 0x30, 0x31 };                                       
 IPAddress ip(192, 168, 1, 200);                        
-EthernetServer server(80);
+EthernetServer server(8080);
 
 void setup() {
   Serial.begin(9600);

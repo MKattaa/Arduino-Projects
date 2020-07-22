@@ -22,7 +22,7 @@ void setup() {
   Ethernet.begin(mac, ip);
   server.begin();
 
-  Serial.print("IP Address: ");
+  Serial.print("Server IP Address: ");
   Serial.println(Ethernet.localIP());
 }
 
@@ -32,7 +32,7 @@ void loop() {
 
   if (client) 
   {  
-    Serial.println("-> New Connection");
+    Serial.println("New Connection with andriod TV screen");
 
     // an http request ends with a blank line
     boolean currentLineIsBlank = true;
@@ -50,10 +50,10 @@ void loop() {
         {
           client.println("HTTP/1.1 200 OK");
           client.println("Content-Type: application/json");
-          client.println("Connection: close");  // the connection will be closed after completion of the response
+          client.println("Connection: close");  // the connection will be closed after completion of the response         
           client.println();
           sensors.requestTemperatures();
-          client.println("{ \"temp\": " + String(sensors.getTempCByIndex(0)) + " }");
+          client.println("{\"temp\": " + String(sensors.getTempCByIndex(0)) + ", \"HalteStatus\": " + "Wagenhält" + ", \"nächsteHalteStelle\": " + "Berliner Platz" + ", \"Karte_Id\": " + "892354" + "}");
           client.println();
           break;
         }
@@ -75,6 +75,6 @@ void loop() {
 
     // close the connection:
     client.stop();
-    Serial.println("   Disconnected\n");
+    Serial.println("Disconnected\n");
   }
 }

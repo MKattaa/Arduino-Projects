@@ -1,0 +1,7 @@
+{
+    "port": "COM7",
+    "programmer": "AVRISP mkII",
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328old",
+    "sketch": "IBIS_Server.ino"
+}

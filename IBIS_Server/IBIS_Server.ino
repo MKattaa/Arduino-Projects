@@ -1,4 +1,4 @@
-#include <UIPEthernet.h> // Used for Ethernet
+#include <Ethernet.h> // Used for Ethernet
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
@@ -8,7 +8,7 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
 // **** ETHERNET SETTING ****
-byte mac[] = { 0x54, 0x34, 0x41, 0x30, 0x30, 0x31 };                                       
+byte mac[] = { 0xA8, 0x61, 0x0A, 0xAE, 0x71, 0x31 };                                       
 IPAddress ip(192, 168, 1, 200);                        
 EthernetServer server(8080);
 

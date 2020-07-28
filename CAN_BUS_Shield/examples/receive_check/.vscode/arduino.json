@@ -1,7 +1,7 @@
 {
     "port": "COM8",
-    "programmer": "AVRISP mkII",
     "board": "arduino:avr:mega",
     "configuration": "cpu=atmega2560",
-    "sketch": "IBIS_Server.ino"
+    "programmer": "AVRISP mkII",
+    "sketch": "receive_check.ino"
 }

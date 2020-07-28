@@ -1,10 +1,13 @@
+#include <mcp_can.h>
+#include <mcp_can_dfs.h>
+
 // demo: CAN-BUS Shield, receive data with check mode
 // send data coming to fast, such as less than 10ms, you can use this way
 // loovee, 2014-6-13
 
 
 #include <SPI.h>
-#include "mcp_can.h"
+// #include "mcp_can.h"
 
 /*SAMD core*/
 #ifdef ARDUINO_SAMD_VARIANT_COMPLIANCE
@@ -22,7 +25,7 @@ MCP_CAN CAN(SPI_CS_PIN);                                    // Set CS pin
 void setup() {
     SERIAL.begin(115200);
 
-    while (CAN_OK != CAN.begin(CAN_500KBPS)) {            // init can bus : baudrate = 500k
+    while (CAN_OK != CAN.begin(CAN_20KBPS)) {            // init can bus : baudrate = 500k
         SERIAL.println("CAN BUS Shield init fail");
         SERIAL.println(" Init CAN BUS Shield again");
         delay(100);
